@@ -14,7 +14,7 @@ namespace BakeryVendors.Tests
       string vendorName = "New Vendor";
       Vendors newVendor = new Vendors(vendorName);
 
-      string testVendor = newVendor.vendorName;
+      string testVendor = newVendor.VendorName;
 
       Assert.AreEqual(vendorName, testVendor);
     }
