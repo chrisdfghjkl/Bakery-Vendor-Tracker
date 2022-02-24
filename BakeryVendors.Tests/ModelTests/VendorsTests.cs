@@ -11,7 +11,7 @@ namespace BakeryVendors.Tests
     [TestMethod]
     public void Vendor_CreatesInstanceOfVendor_Vendors()
     {
-      Vendors newVendor = new Vendors("name");
+      Vendors newVendor = new Vendors("name", "descriptopmn");
       Assert.AreEqual(typeof(Vendors), newVendor.GetType());
 
     }
@@ -20,7 +20,8 @@ namespace BakeryVendors.Tests
     public void GetVendorName_ReturnsVendorName_String()
     {
       string vendorName = "New Vendor";
-      Vendors newVendor = new Vendors(vendorName);
+      string vendorDescription = "stuff";
+      Vendors newVendor = new Vendors(vendorName, vendorDescription);
 
       string testVendor = newVendor.VendorName;
 
@@ -33,10 +34,7 @@ namespace BakeryVendors.Tests
       string vendorName = "New Vendor";
       string vendorDescription = "Details about new vendor";
       Vendors newVendor = new Vendors(vendorName, vendorDescription);
-
-      string testVendor = newVendor.VendorDescription;
-
-      Assert.AreEqual(vendorDescription, testVendor);
+      Assert.AreEqual(vendorDescription, newVendor.VendorDescription);
     }
   }
 }
