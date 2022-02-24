@@ -6,13 +6,9 @@ using System;
 namespace BakeryVendors.Tests
 {
   [TestClass]
-  public class VendorsTests : IDisposable
+  public class VendorsTests
   {
-
-    public void Dispose()
-    {
-      Item.ClearAll();
-    }
+  
 
     
   }
