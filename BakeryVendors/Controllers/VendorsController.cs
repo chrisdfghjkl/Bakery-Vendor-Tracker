@@ -19,5 +19,12 @@ namespace BakeryVendors.Controllers
     {
       return View();
     }
+
+    [HttpPost("/vendors")]
+    public ActionResult Create(string vendorName, string vendorDescription)
+    {
+      Vendors newVendor = new Vendors(vendorName, vendorDescription);
+      return RedirectToAction("Index");
+    }
   }
 }
