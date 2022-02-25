@@ -6,6 +6,7 @@ namespace BakeryVendors.Models
   {
     public string VendorName { get; set; }
     public string VendorDescription { get; set; }
+    public int VendorId { get; }
     private static List<Vendors> _instances = new List<Vendors> { };
 
     public Vendors(string vendorName, string vendorDescription)
@@ -13,6 +14,7 @@ namespace BakeryVendors.Models
       VendorName = vendorName;
       VendorDescription = vendorDescription;
       _instances.Add(this);
+      VendorId = _instances.Count;
     }
 
     public static List<Vendors> GetAll()
