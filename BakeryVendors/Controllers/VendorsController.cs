@@ -7,6 +7,10 @@ namespace BakeryVendors.Controllers
 {
   public class VendorsController : Controller
   {
-    
+    [HttpGet("/vendors")]
+    public ActionResult Index()
+    {
+      return View();
+    }
   }
 }
