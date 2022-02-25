@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using BakeryVendors.Models;
 using System;
 
-namespace BakeryVendors.Tests
+namespace BakeryVendors.Tests 
 {
   [TestClass]
-  public class VendorsTests
+  public class VendorsTests : IDisposable
   {
+    public void Dispose()
+    {
+      Vendors.ClearAll();
+    }
+
     [TestMethod]
     public void Vendor_CreatesInstanceOfVendor_Vendors()
     {
@@ -42,6 +47,22 @@ namespace BakeryVendors.Tests
     {
       List<Vendors> newList = new List<Vendors> { };
       List<Vendors> result = Vendors.GetAll();
+
+      CollectionAssert.AreEqual(newList, result);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsListOfAddedVendors_VendorsList()
+    {
+      string vendorOne = "First Vendor";
+      string vendorDescriptionOne = "Sells bread";
+      string vendorTwo = "Second Vendor";
+      string vendorDescriptionTwo = "Sells pastry";
+      Vendors newVendor1 = new Vendors(vendorOne, vendorDescriptionOne);
+      Vendors newVendor2 = new Vendors(vendorTwo, vendorDescriptionTwo);
+      List<Vendors> newList = new List<Vendors> { newVendor1, newVendor2 };
+
+      List<Vendors> result = VendorsTests.GetAll();
 
       CollectionAssert.AreEqual(newList, result);
     }
