@@ -62,7 +62,7 @@ namespace BakeryVendors.Tests
       Vendors newVendor2 = new Vendors(vendorTwo, vendorDescriptionTwo);
       List<Vendors> newList = new List<Vendors> { newVendor1, newVendor2 };
 
-      List<Vendors> result = VendorsTests.GetAll();
+      List<Vendors> result = Vendors.GetAll();
 
       CollectionAssert.AreEqual(newList, result);
     }
