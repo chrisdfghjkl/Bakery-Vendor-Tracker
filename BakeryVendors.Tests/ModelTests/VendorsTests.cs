@@ -66,5 +66,17 @@ namespace BakeryVendors.Tests
 
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void VendorId_AssignsUniqueIdToVendor_Int()
+    {
+      string vendorName = "New Vendor";
+      string vendorDescription = "My first vendor";
+      Vendors newVendor = new Vendors(vendorName, vendorDescription);
+
+      int uniqueVendor = newVendor.VendorId;
+
+      Assert.AreEqual(1, uniqueVendor);
+    }
   }
 }
