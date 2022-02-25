@@ -12,6 +12,7 @@ namespace BakeryVendors.Models
     {
       VendorName = vendorName;
       VendorDescription = vendorDescription;
+      _instances.Add(this);
     }
 
     public static List<Vendors> GetAll()
