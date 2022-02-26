@@ -25,6 +25,11 @@ namespace BakeryVendors.Models
     {
       return _orderInstances;
     }
+
+    public static Order Find(int searchId)
+    {
+      return _orderInstances[searchId-1];
+    }
     public static void ClearAll()
     {
       _orderInstances.Clear();
