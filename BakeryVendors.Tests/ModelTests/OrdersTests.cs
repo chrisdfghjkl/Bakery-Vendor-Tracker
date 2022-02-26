@@ -102,5 +102,15 @@ namespace BakeryVendors.Tests
 
       Assert.AreEqual(1, uniqueOrder);
     }
+    
+    public void Find_ReturnsOrderById_Order()
+    {
+      Order firstOrder = new Order("Weekly bread order", "25 loaves", 100, "02/14/2022");
+      Order secondOrder = new Order("Weekly bread order", "50 loaves", 200, "02/21/2022");
+
+      Order idSearch = Order.Find(2);
+
+      Assert.AreEqual(2, idSearch);
+    }
   }
 }
