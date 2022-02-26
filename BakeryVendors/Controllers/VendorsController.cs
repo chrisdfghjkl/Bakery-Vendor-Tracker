@@ -33,8 +33,8 @@ namespace BakeryVendors.Controllers
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendors vendorSelection = Vendors.Find(vendorId);
       List<Order> orderList = vendorSelection.Orders;
-      model.Add("orders", orderList);
       model.Add("vendor", vendorSelection);
+      model.Add("orders", orderList);
       return View("Show", model);
     }
   }
