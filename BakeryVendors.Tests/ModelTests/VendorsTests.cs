@@ -93,5 +93,24 @@ namespace BakeryVendors.Tests
 
       Assert.AreEqual(newVendor, result);
     }
+
+    [TestMethod]
+    public void AddOrder_LinkOrderToVendor_OrderList()
+    {
+    string orderTitle = "Weekly bread order";
+    string orderDescription = "25 loaves";
+    int orderPrice = 100;
+    string orderDate = "02/26/2022";
+    Order newOrder = new Order(orderTitle, orderDescription, orderPrice, orderDate);
+    List<Order> newList = new List<Order> { newOrder };
+    string vendorName = "Bob's Bakery";
+    string vendorDescription = "Gluten free only";
+    Vendors newVendor = new Vendors(vendorName, vendorDescription);
+    newVendor.AddOrder(newOrder);
+
+    List<Order> result = newVendor.Orders;
+
+    CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
