@@ -50,7 +50,18 @@ namespace BakeryVendors.Tests
 
       int invoice = newOrder.OrderPrice;
 
-      Assert.AreEqual(10, orderPrice);
+      Assert.AreEqual(invoice, orderPrice);
+    }
+
+    [TestMethod]
+    public void GetDate_ReturnsDateOrderPlaced_String()
+    {
+      string orderDate = "02/26/2022";
+      Order newOrder = new Order("Bob's", "Red Mill", 45, orderDate);
+
+      string orderPlaced = newOrder.OrderDate;
+
+      Assert.AreEqual(orderPlaced, orderDate);
     }
   }
 }
