@@ -92,5 +92,15 @@ namespace BakeryVendors.Tests
 
       CollectionAssert.AreEqual(newOrderList, result);
     }
+
+    [TestMethod]
+    public void OrderId_AssignUniqueIdToOrder_Int()
+    {
+      Order newOrder = new Order("Bob's", "Red Mill", 50, "02/26/2022");
+
+      int uniqueOrder = newOrder.OrderId;
+
+      Assert.AreEqual(1, uniqueOrder);
+    }
   }
 }
