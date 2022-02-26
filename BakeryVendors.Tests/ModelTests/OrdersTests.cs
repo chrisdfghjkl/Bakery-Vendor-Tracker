@@ -6,13 +6,17 @@ using System;
 namespace BakeryVendors.Tests
 {
   [TestClass]
-  public class OrdersTests
+  public class OrdersTests : IDisposable
   {
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
 
     [TestMethod]
     public void Order_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("test");
+      Order newOrder = new Order("test", "description");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -20,7 +24,8 @@ namespace BakeryVendors.Tests
     public void GetTitle_ReturnOrderTitle_String()
     {
       string orderTitle = "Cafe order 1";
-      Order newOrder = new Order(orderTitle);
+      string orderDescription = "gluten free";
+      Order newOrder = new Order(orderTitle, orderDescription);
 
       string title = newOrder.OrderTitle;
 
