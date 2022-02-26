@@ -28,10 +28,10 @@ namespace BakeryVendors.Controllers
     }
 
     [HttpGet("/vendors/{vendorId}")]
-    public ActionResult Show(int vendorId)
+    public ActionResult Show(int VendorId)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
-      Vendors vendorSelection = Vendors.Find(vendorId);
+      Vendors vendorSelection = Vendors.Find(VendorId);
       List<Order> orderList = vendorSelection.Orders;
       model.Add("vendor", vendorSelection);
       model.Add("orders", orderList);
