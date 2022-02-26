@@ -72,5 +72,25 @@ namespace BakeryVendors.Tests
 
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsListOfOrders_OrderList()
+    {
+      string orderTitle1 = "Bread order";
+      string orderDescription1 = "10 loaves of bread";
+      int orderPrice1 = 50;
+      string orderDate1 = "02/26/2022";
+      string orderTitle2 = "Pastry order";
+      string orderDescription2 = "20 pastries";
+      int orderPrice2 = 150;
+      string orderDate2 = "02/27/2022";
+      Order newOrder1 = new Order(orderTitle1, orderDescription1, orderPrice1, orderDate1);
+      Order newOrder2 = new Order(orderTitle2, orderDescription2, orderPrice2, orderDate2);
+      List<Order> newOrderList = new List<Order> { newOrder1, newOrder2 };
+
+      List<Order> result = Order.GetAll();
+
+      CollectionAssert.AreEqual(newOrderList, result);
+    }
   }
 }
