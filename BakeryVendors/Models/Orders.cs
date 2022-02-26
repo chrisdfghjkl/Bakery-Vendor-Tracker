@@ -18,6 +18,11 @@ namespace BakeryVendors.Models
       OrderDate = orderDate;
       _orderInstances.Add(this);
     }
+
+    public static List<Order> GetAll()
+    {
+      return _orderInstances;
+    }
     public static void ClearAll()
     {
       _orderInstances.Clear();
