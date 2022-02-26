@@ -43,5 +43,18 @@ namespace BakeryVendors.Tests
 
       Assert.AreEqual(details, orderDescription);
     }
+
+    [TestMethod]
+    public void GetPrice_ReturnsOrderPrice_Int()
+    {
+      string orderTitle = "Cafe order 1";
+      string orderDescription = "ten bread loaves, 30 pastries";
+      int orderTotal = 10;
+      Order newOrder = new Order(orderTitle, orderDescription, orderTotal);
+
+      string invoice = newOrder.OrderTotal;
+
+      Assert.AreEqual(10, orderTotal);
+    }
   }
 }
