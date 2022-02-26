@@ -16,7 +16,7 @@ namespace BakeryVendors.Tests
     [TestMethod]
     public void Order_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("test", "description");
+      Order newOrder = new Order("test", "description", 10);
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -24,8 +24,7 @@ namespace BakeryVendors.Tests
     public void GetTitle_ReturnOrderTitle_String()
     {
       string orderTitle = "Cafe order 1";
-      string orderDescription = "gluten free";
-      Order newOrder = new Order(orderTitle, orderDescription);
+      Order newOrder = new Order(orderTitle, "order description", 10);
 
       string title = newOrder.OrderTitle;
 
@@ -35,9 +34,8 @@ namespace BakeryVendors.Tests
     [TestMethod]
     public void GetDescription_ReturnsOrderDescription_String()
     {
-      string orderTitle = "Cafe order 1";
       string orderDescription = "ten bread loaves, 30 pastries";
-      Order newOrder = new Order(orderTitle, orderDescription);
+      Order newOrder = new Order("order title,", orderDescription, 5);
 
       string details = newOrder.OrderDescription;
 
@@ -47,14 +45,12 @@ namespace BakeryVendors.Tests
     [TestMethod]
     public void GetPrice_ReturnsOrderPrice_Int()
     {
-      string orderTitle = "Cafe order 1";
-      string orderDescription = "ten bread loaves, 30 pastries";
-      int orderTotal = 10;
-      Order newOrder = new Order(orderTitle, orderDescription, orderTotal);
+      int orderPrice = 10;
+      Order newOrder = new Order("Bob's", "Red Mill", orderPrice);
 
-      string invoice = newOrder.OrderTotal;
+      int invoice = newOrder.OrderPrice;
 
-      Assert.AreEqual(10, orderTotal);
+      Assert.AreEqual(10, orderPrice);
     }
   }
 }
