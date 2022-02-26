@@ -1,0 +1,20 @@
+@{
+  Layout = "_Layout";
+}
+@using BakeryVendors.Models;
+
+<div class="container">
+  <h1>Order History:</h1>
+  <br>
+  <ol>
+  @foreach (Order order in @Model["orders"])
+  {
+    <li><a href='/vendors/@Model["vendor"].VendorId/orders/@order.OrderId'>@order.OrderTitle</a></li>
+  }
+  </ol>
+  <br>
+  
+  <p><a href='/vendors/@Model["vendor"].VendorId/orders/new'>Add new order</a></p>
+  <p><a href='/vendors'>Return to vendor list</a></p>
+  <p><a href='/'>Return to Home Page</a></p>
+</div>
