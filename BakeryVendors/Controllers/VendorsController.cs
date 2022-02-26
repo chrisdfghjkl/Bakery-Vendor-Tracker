@@ -26,5 +26,16 @@ namespace BakeryVendors.Controllers
       Vendors newVendor = new Vendors(vendorName, vendorDescription);
       return RedirectToAction("Index");
     }
+
+    [HttpGet("/vendors/{vendorId}")]
+    public ActionResult Show(int vendorId)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendors vendorSelection = Vendors.Find(vendorId);
+      List<Order> orderList = vendorSelection.Orders;
+      model.Add("orders", orderList);
+      model.Add("vendor", vendorSelection);
+      return View("Show", model);
+    }
   }
 }
