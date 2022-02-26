@@ -63,5 +63,14 @@ namespace BakeryVendors.Tests
 
       Assert.AreEqual(orderPlaced, orderDate);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_OrderList()
+    {
+      List<Order> newList = new List<Order> { };
+      List<Order> result = Order.GetAll();
+
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
