@@ -3,16 +3,22 @@
 }
 @using BakeryVendors.Models;
 <div class="container">
-  <h1>Current Vendors:</h1>
+  <h1>Current Vendors:</h1><br>
   
   @if (@Model.Count == 0)
   {
-    <h3>No active vendors</h3>
+    <h4>No active vendors, <a href="/vendors/new">click here</a> to add one.</h4>
+    <br>
+    <p><a href='/'>Home</a></p>
   }
 
   @foreach (Vendors vendor in Model)
   {
-    <h3><a href="/vendors/@vendor.VendorId">@vendor.VendorName</a></h3>
+    <ul>
+    <li><h4><a href="/vendors/@vendor.VendorId">@vendor.VendorName</a></h4></li>
+    </ul>
+    <br>
+    <p> <a href="/vendors/new">Add a new vendor</a></p>
+    <p><a href='/'>Home</a></p>
   }
-  
 </div>
