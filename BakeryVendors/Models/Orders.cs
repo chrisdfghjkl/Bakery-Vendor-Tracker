@@ -10,6 +10,7 @@ namespace BakeryVendors.Models
     public string OrderDescription { get; set; }
     public int OrderPrice { get; set; }
     public string OrderDate { get; set; }
+    public int OrderId { get; }
     public Order(string orderTitle, string orderDescription, int orderPrice, string orderDate)
     {
       OrderTitle = orderTitle;
@@ -17,6 +18,7 @@ namespace BakeryVendors.Models
       OrderPrice = orderPrice;
       OrderDate = orderDate;
       _orderInstances.Add(this);
+      OrderId = _orderInstances.Count;
     }
 
     public static List<Order> GetAll()
