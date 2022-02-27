@@ -43,12 +43,12 @@ namespace BakeryVendors.Tests
     }
 
     [TestMethod]
-    public void GetPrice_ReturnsOrderPrice_Int()
+    public void GetPrice_ReturnsOrderPrice_Float()
     {
-      int orderPrice = 10;
+      float orderPrice = 10;
       Order newOrder = new Order("Bob's", "Red Mill", orderPrice, "02/26/2022");
 
-      int invoice = newOrder.OrderPrice;
+      float invoice = newOrder.OrderPrice;
 
       Assert.AreEqual(invoice, orderPrice);
     }
@@ -78,11 +78,11 @@ namespace BakeryVendors.Tests
     {
       string orderTitle1 = "Bread order";
       string orderDescription1 = "10 loaves of bread";
-      int orderPrice1 = 50;
+      float orderPrice1 = 50;
       string orderDate1 = "02/26/2022";
       string orderTitle2 = "Pastry order";
       string orderDescription2 = "20 pastries";
-      int orderPrice2 = 150;
+      float orderPrice2 = 150;
       string orderDate2 = "02/27/2022";
       Order newOrder1 = new Order(orderTitle1, orderDescription1, orderPrice1, orderDate1);
       Order newOrder2 = new Order(orderTitle2, orderDescription2, orderPrice2, orderDate2);

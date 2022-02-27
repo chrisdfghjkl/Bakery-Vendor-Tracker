@@ -99,7 +99,7 @@ namespace BakeryVendors.Tests
     {
     string orderTitle = "Weekly bread order";
     string orderDescription = "25 loaves";
-    int orderPrice = 100;
+    float orderPrice = 100;
     string orderDate = "02/26/2022";
     Order newOrder = new Order(orderTitle, orderDescription, orderPrice, orderDate);
     List<Order> newList = new List<Order> { newOrder };

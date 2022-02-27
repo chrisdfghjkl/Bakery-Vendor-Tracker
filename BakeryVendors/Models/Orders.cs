@@ -8,10 +8,10 @@ namespace BakeryVendors.Models
     private static List<Order> _orderInstances = new List<Order> {};
     public string OrderTitle { get; set;}
     public string OrderDescription { get; set; }
-    public int OrderPrice { get; set; }
+    public float OrderPrice { get; set; }
     public string OrderDate { get; set; }
     public int OrderId { get; }
-    public Order(string orderTitle, string orderDescription, int orderPrice, string orderDate)
+    public Order(string orderTitle, string orderDescription, float orderPrice, string orderDate)
     {
       OrderTitle = orderTitle;
       OrderDescription = orderDescription;
