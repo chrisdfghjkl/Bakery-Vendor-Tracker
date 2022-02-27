@@ -2,5 +2,23 @@
   Layout = "_Layout";
 }
 <div class="container">
-  <h1>@Model.vendorName - New order form:</h1>
+  <h1>@Model.VendorName - New order form:</h1>
+  <form action="/vendors/@Model.VendorId/orders" method="post">
+    <div class="form-group">
+      <input id="vendorId" name="vendorId" type="hidden" value="@Model.VendorId">
+      <label for="orderTitle">Order:</label>
+      <input class="form-control" id="orderTitle" name="orderTitle" type="text">
+      <br>
+      <label for="orderDescription">Description:</label>
+      <input class="form-control" id="orderDescription" name="orderDescription" type="text">
+      <br>
+      <label for="orderPrice">Price:</label>
+      <input class="form-control" id="orderPrice" name="orderPrice" type="number" min="0.00">
+      <br>
+      <label for="orderDate">Date:</label>
+      <input class="form-control" id="orderDate" name="orderDate" type="text" placeholder="MM/DD/YYYY">
+      <br>
+      <button type="submit" class="btn btn-primary">Log Order</button>
+    </div>
+  </form>
 </div>
