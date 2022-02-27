@@ -1,6 +1,6 @@
 # Pierre's Vendor Tracker
 ##### By Chris DePastene
-#
+
 #### Description
 Epicodus independent project for C# Web Applications. The goal of the project is to create an MVC application to track bakery the vendors and their subsequent orders.
 
